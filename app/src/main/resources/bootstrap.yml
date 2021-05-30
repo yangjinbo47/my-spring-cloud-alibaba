@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: my-spring-cloud-app
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+#        file-extension: yaml
+#        prefix: application
+
+#消费者要访问的微服务名称
+service-url:
+  nacos-user-service: http://my-spring-cloud-service

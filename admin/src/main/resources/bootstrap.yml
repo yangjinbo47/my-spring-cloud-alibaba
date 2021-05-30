@@ -1,0 +1,33 @@
+server:
+  # 配置api端口号
+  port: 9200
+  # session最大超时时间(分钟)，默认为30分钟
+  session-timeout: 60
+  # 配置context-path, 一般来说这个配置在正式发布的时候不配置
+  servlet:
+    context-path: /admin
+
+spring:
+  application:
+    name: my-spring-cloud-admin
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        metadata:
+          management:
+            context-path: '${server.servlet.context-path}/actuator'
+  security:
+    user:
+      name: admin
+      password: admin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
