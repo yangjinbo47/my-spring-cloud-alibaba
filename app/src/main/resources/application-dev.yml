@@ -10,3 +10,12 @@ server:
 spring:
   zipkin:
     base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+
+#消费者要访问的微服务名称
+service-url:
+  nacos-user-service: http://my-spring-cloud-service
+pay-url:
+  nacos-pay-service: http://my-spring-cloud-dtxpay

@@ -18,6 +18,7 @@ public class ProviderController {
 
     @GetMapping("/demo")
     public Object demo() {
+//        System.out.println(1/0);
         return "this is provider demo";
     }
 

@@ -9,8 +9,14 @@
         <module name="admin" />
         <module name="api" />
         <module name="app" />
+        <module name="dtx-order" />
+        <module name="dtx-pay" />
         <module name="service" />
+        <module name="tx-manager" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="service (1)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

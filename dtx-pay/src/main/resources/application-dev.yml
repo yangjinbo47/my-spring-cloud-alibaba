@@ -1,0 +1,40 @@
+server:
+  # 配置api端口号
+  port: 8090
+  # session最大超时时间(分钟)，默认为30分钟
+  session-timeout: 60
+  # 配置context-path, 一般来说这个配置在正式发布的时候不配置
+  servlet:
+    context-path: /pay
+
+spring:
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+  datasource:
+    url : jdbc:mysql://localhost:3306/test_pay?useunicode=true&characterEncoding=utf8
+    username : root
+    password : 123456
+    driver-class-name : com.mysql.jdbc.Driver
+    druid :
+      initial-size : 1
+      min-idle : 1
+      max-active : 20
+      test-on-borrow : true
+      stat-view-servlet:
+        allow : true
+
+#spring:
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+tx-lcn:
+  ribbon:
+    loadbalancer:
+      dtx:
+        enabled: true
+
+order-url:
+  nacos-order-service: http://my-spring-cloud-dtxorder
